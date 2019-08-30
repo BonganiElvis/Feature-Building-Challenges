@@ -1,0 +1,60 @@
+
+<html>
+    <head>
+        <title>Login and sign-up form</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <script type="text/javascript">
+        var myArr =  ["Name","Surname","Age","Email","Password","Confirm-Password"] ;
+        function validate(){
+            var password = document.getElementById("pass");
+            var conf_password = document.getElementById("passc");
+            if (password.value== conf_password.value){
+            alert("success");
+            var name = document.getElementById("name").value;
+            var surname = document.getElementById("surname").value;
+            var age = document.getElementById("age").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("pass").value;
+            var conf_password = document.getElementById("passc").value;
+            myArr.push(name);
+            myArr.push(surname);
+            myArr.push(age);
+            myArr.push(email);
+            myArr.push(password);
+            myArr.push(conf_password);
+           
+            return true;
+            }
+            else if(password.value!= conf_password.value){
+                alert("passwords do not match");
+                return false;
+            }
+
+
+        }
+
+        </script>
+        
+        
+    </head>
+    <body>
+        <div class="login-page">
+        <div class="form">
+            <form onsubmit="return validate()" action="welcome.html" class="sign-up-form" >
+                <input id="name" placeholder="Name">
+                <input id="surname" placeholder="Surname">
+                <input id="age" placeholder="Age">
+                <input id="email" placeholder="Email">
+                <input id="pass" placeholder="Password" type="password"/>
+                <input id="passc" placeholder="confirm-password" type="password"/>
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
+        </div>
+        
+    </body>
+</html>
